@@ -1,4 +1,4 @@
-import RefetchBtn from "../components/refetchBtn";
+import RefetchBtn from "../components/RefetchBtn";
 
 function Error() {
   return (
