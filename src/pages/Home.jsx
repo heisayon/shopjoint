@@ -3,6 +3,7 @@ import Search from "../components/Search";
 function Home() {
   return (
     <>
+ 
       <div className="sm:hidden">
         <Search />
       </div>
