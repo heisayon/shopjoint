@@ -14,7 +14,7 @@ function Search() {
     setSearchQuery(event.target.value);
   };
   return (
-    <div className="flex justify-center items-center px-5">
+    <div className="flex justify-center items-center px-5 flex-wrap">
       <div className="relative">
         <input
           className="rounded-md py-2 outline-none text-black pl-9 pr-9 border-2 border-cyan-700"
