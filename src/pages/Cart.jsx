@@ -30,7 +30,7 @@ function Cart() {
       <Checkout
         totalPrice={total}
         shipping={cartItems.length}
-        price={productprice.toFixed(2)}
+        price={Number(productprice.toFixed(2))}
       />
     </section>
   );
