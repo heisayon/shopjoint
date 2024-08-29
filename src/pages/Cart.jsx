@@ -1,10 +1,20 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartProduct from "../components/CartProduct";
+import Checkout from "../components/Checkout";
+import { totalPrice } from "../features/cartSlice";
+import { useEffect } from "react";
 function Cart() {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartSlice.cart);
+  const total = useSelector((state) => state.cartSlice.total);
+  const productprice = useSelector((state) => state.cartSlice.productPrice);
+
+  useEffect(() => {
+    dispatch(totalPrice());
+  }, [cartItems]);
   return (
-    <section className="flex gap-6 max-sm:flex-col justify-center items-center">
-      <div className="flex justify-center items-center flex-wrap gap-5 max-w-[500px] overflow-y-scroll h-[90vh] max-sm:h-[60vh] pb-3">
+    <section className="flex gap-2 max-sm:flex-col max-sm:items-center">
+      <div className="flex justify-center items-center flex-wrap gap-5 max-w-[500px] overflow-y-scroll h-[90vh] max-sm:h-[60vh] pb-3 pt-2 px-10">
         {cartItems.map((product, i) => (
           <CartProduct
             name={product.title}
@@ -17,15 +27,11 @@ function Cart() {
           />
         ))}
       </div>
-      {cartItems.length > 0 && (
-        <div className="flex-1 max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:right-0 max-sm:h-[30vh] max-sm:bg-white">
-          <h1 className="">Check Out</h1>
-          <div>
-            <h1>Shipping: </h1>
-            <h1>Total: </h1>
-          </div>
-        </div>
-      )}
+      <Checkout
+        totalPrice={total}
+        shipping={cartItems.length}
+        price={productprice.toFixed(2)}
+      />
     </section>
   );
 }

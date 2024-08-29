@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import Search from "./Search";
 import { useSelector } from "react-redux";
 function Navbar() {
   const cartItem = useSelector((state) => state.cartSlice.cart);
@@ -11,9 +10,6 @@ function Navbar() {
         <ul className="flex justify-between text-white p-4 items-center flex-wrap">
           <li className=" first-letter:text-4xl font-semibold">
             <Link to="/">ShopJoint</Link>
-          </li>
-          <li className="max-sm:hidden">
-            <Search />
           </li>
           <li className="relative z-30">
             <Link to="/cart">

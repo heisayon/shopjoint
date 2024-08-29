@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
  
-      <div className="sm:hidden">
+      <div>
         <Search />
       </div>
       <Products />

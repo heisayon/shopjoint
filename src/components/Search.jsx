@@ -15,20 +15,20 @@ function Search() {
     setSearchQuery(event.target.value);
   };
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex justify-center items-center px-5">
       <div className="relative">
         <input
-          className="rounded-md py-2 mr-6 outline-none text-black pl-9 pr-9 max-sm:border-2 max-sm:border-cyan-700"
+          className="rounded-md py-2 outline-none text-black pl-9 pr-9 border-2 border-cyan-700"
           onChange={handleInput}
           value={searchQuery}
         />
         <img
           src={SearchIcon}
           alt="Search..."
-          className="w-6 absolute top-0 mt-2 ml-2 brightness-50 hover:cursor-pointer"
+          className="w-6 absolute top-1 mt-2 ml-2 brightness-50 hover:cursor-pointer"
         />
       </div>
-      <Button onClick={handleSearch}  className=" max-[375px]:mt-2">Search</Button>
+      <Button onClick={handleSearch} className="ml-1">Search</Button>
     </div>
   );
 }

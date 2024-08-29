@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Ratings from "./Ratings";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
+
 function ProductCard({ image, name, availability, price, rating, data }) {
   const dispatch = useDispatch();
-
   return (
     <Card className=" max-w-xs" imgAlt={name} imgSrc={image}>
       <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
