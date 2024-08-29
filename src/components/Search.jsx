@@ -8,7 +8,6 @@ function Search() {
   const dispatch = useDispatch();
   const handleSearch = () => {
     dispatch(getSearchValue(searchQuery));
-    setSearchQuery("");
   };
 
   const handleInput = (event) => {
