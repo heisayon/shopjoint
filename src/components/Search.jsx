@@ -27,7 +27,7 @@ function Search() {
           className="w-6 absolute top-1 mt-2 ml-2 brightness-50 hover:cursor-pointer"
         />
       </div>
-      <Button onClick={handleSearch} className="ml-1">Search</Button>
+      <Button onClick={handleSearch} className="ml-1 max-[404px]:mt-2">Search</Button>
     </div>
   );
 }
