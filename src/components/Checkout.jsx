@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 function Checkout({ totalPrice, shipping, price }) {
   return (
-    <div className="flex-1 max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:right-0 max-sm:h-[30vh] max-sm:bg-white border-2 border-cyan-800 p-5">
+    <div className="flex-1 max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:right-0 max-sm:h-[40vh] max-sm:bg-white border-2 border-cyan-800 p-5 max-sm:rounded-t-2xl">
       <h1 className="text-4xl font-semibold text-center">Check Out</h1>
-      <div className="flex flex-col text-2xl p-5">
+      <div className="flex flex-col text-2xl max-sm:text-lg p-5">
         <div className="flex justify-between border-b-2 pb-5">
           <h1 className="font-medium">Shipping: </h1>
           <span className="font-semibold">${shipping * 0.5}</span>

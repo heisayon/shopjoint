@@ -13,8 +13,8 @@ function Cart() {
     dispatch(totalPrice());
   }, [cartItems]);
   return (
-    <section className="flex gap-2 max-sm:flex-col max-sm:items-center">
-      <div className="flex justify-center items-center flex-wrap gap-5 max-w-[500px] overflow-y-scroll h-[90vh] max-sm:h-[60vh] pb-3 pt-2 px-10">
+    <section className="flex gap-2 max-sm:flex-col max-sm:items-center h-[90vh]">
+      <div className="flex justify-center items-center flex-wrap gap-5 max-w-[500px] overflow-y-scroll h-[90vh] max-sm:h-[50vh] pb-3 pt-2 px-10">
         {cartItems.map((product, i) => (
           <CartProduct
             name={product.title}
