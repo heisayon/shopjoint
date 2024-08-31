@@ -5,6 +5,7 @@ const initialState = {
   total: 0,
   productPrice: 0,
   shippingFee: 0.5,
+  numberOfProducts: 1,
 };
 
 export const cartSlice = createSlice({
@@ -26,12 +27,24 @@ export const cartSlice = createSlice({
       let allPrice = 0;
       let shipment = state.shippingFee * state.cart.length;
       state.cart.forEach((products) => (allPrice += products.cartItems.price));
-      state.total = allPrice + shipment;
-      state.productPrice = allPrice;
+      state.productPrice = allPrice * state.numberOfProducts;
+      state.total = state.productPrice + shipment;
+    },
+    increaseCount: (state) => {
+      state.numberOfProducts += 1;
+    },
+    decreaseCount: (state) => {
+      state.numberOfProducts -= 1;
     },
   },
 });
 
-export const { addToCart, removeFromCart, totalPrice } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  totalPrice,
+  increaseCount,
+  decreaseCount,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
