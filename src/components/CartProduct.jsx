@@ -32,7 +32,7 @@ CartProduct.propTypes = {
   availability: PropTypes.string,
   price: PropTypes.number,
   rating: PropTypes.string,
-  data: PropTypes.number,
+  data: PropTypes.string,
 };
 
 export default CartProduct;

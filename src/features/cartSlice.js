@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { v4 as uuidv4 } from "uuid";
 const initialState = {
   cart: [],
   total: 0,
@@ -12,17 +12,20 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      [...state.cart, state.cart.push(action.payload)];
+      [
+        ...state.cart,
+        state.cart.push({ uniqueID: uuidv4(), cartItems: action.payload }),
+      ];
     },
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter(
-        (products) => products.id !== action.payload
+        (items) => items.uniqueID !== action.payload
       );
     },
     totalPrice: (state) => {
       let allPrice = 0;
       let shipment = state.shippingFee * state.cart.length;
-      state.cart.forEach((products) => (allPrice += products.price));
+      state.cart.forEach((products) => (allPrice += products.cartItems.price));
       state.total = allPrice + shipment;
       state.productPrice = allPrice;
     },
